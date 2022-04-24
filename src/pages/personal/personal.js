@@ -97,25 +97,22 @@ const { SubMenu } = Menu;
                     </Menu>
                 </Header>
                 <div style={{position: "fixed", right: "50px", zIndex:"10000", top: "20px", fontSize: "18px", color: "white", fontWeight: "bolder"}}>
-                    <span>
-                        User Name: {tit}
-                    </span>
-                </div>
-                <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-                    <Breadcrumb style={{ margin: '16px 0' }}>
-                        <div>
-                            <Button onClick={this.showDeleteConfirm} type="dashed">Log out</Button>
-                            <span> &ensp;   &ensp;   </span>
+                    <Breadcrumb>
+                        <div className="logout">
                             <span style={{ right: '80px' }}>{currentTime}</span>
+                            <Button onClick={this.showDeleteConfirm} type="dashed">Log out</Button>
                         </div>
                     </Breadcrumb>
+                </div>
+                <br/>
+                <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
                     <div>
                         <Switch>
                             <Route path='/personal/chat/robin' component={Robin}/>
                         </Switch>
                     </div>
                 </Content>
-                <Footer style={{ textAlign: 'center' }}>Distributed Systems Group 5 Exercise 2 © 2022</Footer>
+                <Footer style={{ textAlign: 'center' }}>Adaptive Application Group Robin</Footer>
             </Layout>
         )
     }
