@@ -29,7 +29,7 @@ export default class MsgContentionSuggestion extends Component{
                     <MsgTxt txt="Intelligent personal assistant suggestion this meeting for you."/>
                 </div>
                 <div className="msg-con-opera">
-                    <MsgOperaScheduled/>
+                    <MsgOperaSuggestion/>
                 </div>
             </div>
         )

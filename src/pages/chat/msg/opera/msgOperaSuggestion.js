@@ -17,12 +17,12 @@ export default class MsgOperaSuggestion extends Component{
 
     render() {
         return (
-            <div className="">
-                <div>
-
+            <div className="msg-opera msg-opera-sug">
+                <div className="opera-btn">
+                    <Button type="primary" >Scheduling it</Button>
                 </div>
-                <div>
-
+                <div className="opera-btn">
+                    <Button type="primary" danger>I don't want that.</Button>
                 </div>
             </div>
         )

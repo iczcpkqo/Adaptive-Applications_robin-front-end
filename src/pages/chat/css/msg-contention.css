@@ -44,3 +44,16 @@
 .msg-contention>.msg-con-txt>.msg-txt span.txt{}
 
 .msg-contention>.msg-con-opera{}
+
+.msg-contention>.msg-con-opera>.msg-opera {}
+
+.msg-contention>.msg-con-opera>.msg-opera.msg-opera-sch {}
+
+.msg-contention>.msg-con-opera>.msg-opera.msg-opera-sug {}
+
+.msg-contention>.msg-con-opera>.msg-opera .opera-btn{
+    display: inline-block;
+    padding: 25px 25px 0 0;
+}
+
+.msg-contention>.msg-con-opera>.msg-opera .opera-btn Button{ }

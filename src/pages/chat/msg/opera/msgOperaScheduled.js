@@ -17,13 +17,9 @@ export default class MsgOperaScheduled extends Component{
 
     render() {
         return (
-            <div className="">
-                <br/>
-                <div>
-                    <Button type="primary" danger>Button</Button>
-                </div>
-                <div>
-
+            <div className="msg-opera msg-opera-sch">
+                <div className="opera-btn">
+                    <Button type="primary" danger>Cancel</Button>
                 </div>
             </div>
         )
