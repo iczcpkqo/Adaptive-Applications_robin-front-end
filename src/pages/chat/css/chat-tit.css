@@ -1,0 +1,31 @@
+.chat-tit {
+    margin-bottom: 50px;
+}
+
+.chat-tit>.tit{
+    background-color: white;
+    height: 70px;
+    padding-top: 21px;
+}
+
+.chat-tit>.tit .tit-img,
+.chat-tit>.tit .tit-txt{
+    display: inline-block;
+    padding-left: 21px;
+}
+
+.chat-tit>.tit .tit-img img{
+    content: url("../img/pic-1.jpg");
+    border-radius: 40px;
+    height: 28px;
+    width: 28px;
+}
+
+.chat-tit>.tit .tit-txt{
+    font-weight: bolder;
+}
+
+.chat-tit>.tit .tit-txt span{
+
+}
+

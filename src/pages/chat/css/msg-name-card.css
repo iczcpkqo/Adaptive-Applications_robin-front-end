@@ -1,0 +1,12 @@
+.msg-name-card{ }
+
+.msg-name-card>.msg-card-box{ }
+
+.msg-name-card>.msg-card-box>.nc-img { }
+
+.msg-name-card>.name-card-box>.nc-img img {
+    content: url("../img/pic-1.jpg");
+    border-radius: 40px;
+    height: 40px;
+    width: 40px;
+}
