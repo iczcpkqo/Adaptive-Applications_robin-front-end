@@ -7,8 +7,7 @@ import {message} from "antd";
 * */
 
 export default function ajax(url,data={},type='GET'){
-    // const h = "http://52.190.2.8:8080";
-    const h = "";
+    const h = "http://99kiss.net:8080";
     url = h+url;
     const axiosInstance =  axios.create({
         timeout: 8000,

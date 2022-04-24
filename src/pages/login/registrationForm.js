@@ -63,15 +63,6 @@ class  RegistrationForm extends Component{
      * @description：
      */
      onFinish = async (v) => {
-         console.log(v)
-         if(v.usertype == 'athlete')
-         {
-            v.usertype = true
-         }
-         else {
-             v.usertype = false
-         }
-
          var userdata = {
              name:v.username,
              email:v.email,
@@ -124,7 +115,7 @@ class  RegistrationForm extends Component{
 
                 <Form.Item
                     name="email"
-                    label="E-mail(@wada)"
+                    label="E-mail(@99kiss.net)"
                     rules={[
                         {
                             type: "email",
@@ -185,27 +176,6 @@ class  RegistrationForm extends Component{
                     <Input.Password/>
                 </Form.Item>
 
-
-                <Form.Item name={'location'} label="Location"  rules={[{ required: true}]}>
-
-                    <Select style={{ width: 200 }} onChange={handleChange}>
-
-                        {
-                            this.state.location_list.map((result)=>{
-                                console.log(result)
-                                return <Option value={result.region+"-"+result.country}>{result.region+"-"+result.country}</Option>
-                            })
-                        }
-                    </Select>
-
-                </Form.Item>
-
-                <Form.Item name={'usertype'}  label={"User Types"} initialValue={"athlete"} rules={[{ required: true, message: '' }]}>
-                    <Radio.Group onChange={genderChange} defaultValue={'athlete'}>
-                        <Radio value={'a'}>a</Radio>
-                        <Radio value={'b'}>b</Radio>
-                    </Radio.Group>
-                </Form.Item>
 
                 <Form.Item {...this.tailFormItemLayout}>
                     <Button type="primary" htmlType="submit">

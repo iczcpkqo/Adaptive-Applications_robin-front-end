@@ -98,7 +98,7 @@ const { SubMenu } = Menu;
                 </Header>
                 <div style={{position: "fixed", right: "50px", zIndex:"10000", top: "20px", fontSize: "18px", color: "white", fontWeight: "bolder"}}>
                     <span>
-                        I'm {tit}
+                        User Name: {tit}
                     </span>
                 </div>
                 <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>

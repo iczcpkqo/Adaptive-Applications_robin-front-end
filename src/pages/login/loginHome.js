@@ -33,11 +33,25 @@ class  LoginHome extends Component{
      * @description： Authenticate
      */
      onFinish = async (e) => {
+         window.location.href= "../personal/chat/robin";
+
+         withRouter(LoginHome)
+         let response =  await ajax("/user/login", {
+             "email": e.username,
+             "password": e.password
+         },'POST')
+         console.log("login successful");
+         console.log(response);
+
+         StoreUser.save(User.create({
+                 role: response.data.role,
+                 id: response.data.id,
+                 token: response.data.token,
+             }));
      };
 
     render(){
         const genderChange = (value)=> {
-
         }
         return(
             <Form
@@ -53,7 +67,7 @@ class  LoginHome extends Component{
                     name="username"
                     rules={[{ required: true, message: 'Please input your email!' }]}
                 >
-                    <Input />
+                    <Input defaultValue="input anything can login for test"/>
                 </Form.Item>
                 <br/>
                 <Form.Item
@@ -61,7 +75,7 @@ class  LoginHome extends Component{
                     name="password"
                     rules={[{ required: true, message: 'Please input your password!' }]}
                 >
-                    <Input.Password />
+                    <Input.Password/>
                 </Form.Item>
                 <br/>
                 <br/>
