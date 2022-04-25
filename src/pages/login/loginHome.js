@@ -33,7 +33,7 @@ class  LoginHome extends Component{
      * @description： Authenticate
      */
      onFinish = async (e) => {
-         window.location.href= "../personal/chat/robin";
+         window.location.href= "../home/chat/chat";
 
          withRouter(LoginHome)
          let response =  await ajax("/user/login", {

@@ -1,5 +1,5 @@
 /*
-routing component of personal page
+routing component of home page
  */
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import React,{Component} from "react";
@@ -11,18 +11,18 @@ import {
     PieChartOutlined,
     UserOutlined,
 } from '@ant-design/icons';
-import './personal.css'
+import './home.css'
 import storageUtils from "../../utils/storageUtils";
 import StoreUser from "../../utils/StoreUser";
 import User from "../../model/User"
 import { withRouter } from 'react-router-dom';
 import {formateDate} from "../../utils/dateUtils";
-import Robin from "../chat/robin"
+import Robin from "../robin/robin"
 const { confirm } = Modal;
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
- class Personal extends Component{
+ class Home extends Component{
     state = {
         collapsed: false,
         currentTime:formateDate(Date.now()),
@@ -87,12 +87,12 @@ const { SubMenu } = Menu;
         var role = StoreUser.getMyRole();
         var tit = "";
         return (
-            <Layout>
+            <Layout className="page-robin">
                 <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
                     <div className="logo" />
                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
                         <>
-                        <Menu.Item key="5"> <Link to ='/personal/chat/robin'>Robin</Link> </Menu.Item>
+                        <Menu.Item key="5"> <Link to ='/home/robin'>Robin</Link> </Menu.Item>
                         </>
                     </Menu>
                 </Header>
@@ -108,7 +108,7 @@ const { SubMenu } = Menu;
                 <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
                     <div>
                         <Switch>
-                            <Route path='/personal/chat/robin' component={Robin}/>
+                            <Route path='/home/robin' component={Robin}/>
                         </Switch>
                     </div>
                 </Content>
@@ -117,4 +117,4 @@ const { SubMenu } = Menu;
         )
     }
 }
-export default withRouter(Personal);
+export default withRouter(Home);

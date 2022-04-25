@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../../css/msg-contention.css"
+import "../../css/msg.css"
 import {Table, Space, Button} from 'antd';
 import moment from 'moment';
 import ajax from "../../../../api/ajax";
@@ -37,15 +37,16 @@ export default class MsgTitle extends Component{
     render() {
         return (
             <div className="msg-title">
+                <div className="msg-img-box">
+                    <div className="nc-img">
+                        <img/>
+                    </div>
+                </div>
                 <div className="tit-box">
                     <div className="txt">
                         <span className="type">{this.state.action}</span>
                         <span className="prep">for</span>
                         <span className="time">{this.state.booking}</span>
-                    </div>
-                    <div className="time">
-                        <span>{this.state.time}</span>
-
                     </div>
                 </div>
             </div>

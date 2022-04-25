@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import './css/chat.css'
+import {Table, Space, Button} from 'antd';
+import "./robin.css"
+import ajax from "../../api/ajax";
 import User from "../../model/User"
 import StoreUser from "../../utils/StoreUser";
-import ChatTit from "./tit/chatTit";
-import Msg from "./msg/msg";
-import {Table, Space, Button} from 'antd';
-import moment from 'moment';
-import ajax from "../../api/ajax";
+import Chat from "../../component/chat/chat"
+import Dateviewer from "../../component/dateviewer/dateviewer"
 const dateFormat = 'HH:mm DD-MM-YYYY';
 const GET = 'GET'
 const POST = 'POST'
@@ -35,11 +34,12 @@ export default class Robin extends Component{
 
     render() {
         return (
-            <div className="robin">
-                <div className="chat-box">
-                    <ChatTit/>
-                    <Msg type="SCHEDULED"/>
-                    <Msg type="SUGGESTION"/>
+            <div id="robin">
+                <div id="chat">
+                    <Chat/>
+                </div>
+                <div id="calendar">
+                    <Dateviewer />
                 </div>
             </div>
         )

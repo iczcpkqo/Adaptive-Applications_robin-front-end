@@ -22,7 +22,7 @@ export default class Login extends Component{
 
     constructor(props) {
         super(props);
-        // window.location.href= "../personal/chat/robin";
+        // window.location.href= "../home/chat/chat";
     }
 
     showDrawer = () => {
@@ -41,7 +41,7 @@ export default class Login extends Component{
         //Check whether to log in
         if(memoryUtils.user.username){
             message.success("Automatic login successful ! " + memoryUtils.username)
-            return <Redirect to = '/personal'/>
+            return <Redirect to = '/home'/>
         }
         return (
             <div className="login">

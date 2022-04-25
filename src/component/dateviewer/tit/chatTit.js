@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import "../../css/msg-name-card.css"
+import "../css/dateviewer.css"
 import {Table, Space, Button} from 'antd';
 import moment from 'moment';
-import ajax from "../../../../api/ajax";
+import ajax from "../../../api/ajax";
 const dateFormat = 'HH:mm DD-MM-YYYY';
 const GET = 'GET'
 const POST = 'POST'
 const UPDATE = 'PUT'
 const DELETE = 'POST'
 
-export default class MsgNameCard extends Component{
+export default class ChatTit extends Component{
 
     constructor(props) {
         super(props);
@@ -17,10 +17,13 @@ export default class MsgNameCard extends Component{
 
     render() {
         return (
-            <div className="msg-name-card">
-                <div className="name-card-box">
-                    <div className="nc-img">
+            <div className="chat-tit">
+                <div className="tit">
+                    <div className="tit-img">
                         <img/>
+                    </div>
+                    <div className="tit-txt">
+                        <span>Robin</span>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../../css/msg-contention.css"
+import "../../css/msg.css"
 import {Table, Space, Button} from 'antd';
 import moment from 'moment';
 import ajax from "../../../../api/ajax";

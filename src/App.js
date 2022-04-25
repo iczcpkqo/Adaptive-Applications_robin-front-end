@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 //import of the routing
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import Login from "./pages/login/login.js";
-import Personal from "./pages/personal/personal"
+import Personal from "./pages/home/home"
 export default class App extends Component{
     render() {
         return (
@@ -14,7 +14,7 @@ export default class App extends Component{
             <BrowserRouter>
                 <Switch> {/*Only match one of them*/}
                     <Route path='/login' component={Login}></Route>
-                    <Route path='/personal' component={Personal}></Route>
+                    <Route path='/home' component={Personal}></Route>
                     <Route path='/' component={Login}></Route>
                 </Switch>
             </BrowserRouter>

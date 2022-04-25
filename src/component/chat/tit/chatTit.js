@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../css/chat-tit.css"
+import "../css/chat.css"
 import {Table, Space, Button} from 'antd';
 import moment from 'moment';
 import ajax from "../../../api/ajax";

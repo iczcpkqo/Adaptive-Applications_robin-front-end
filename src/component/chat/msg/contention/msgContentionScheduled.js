@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../../css/msg-contention.css"
+import "../../css/msg.css"
 import {Table, Space, Button} from 'antd';
 import moment from 'moment';
 import ajax from "../../../../api/ajax";
@@ -23,10 +23,13 @@ export default class MsgContentionScheduled extends Component{
         return (
             <div className="msg-contention">
                 <div className="msg-con-tit">
-                    <MsgTitle type="SCHEDULED" time="Saturday, 2/4/2022 at 11:30AM" booking="1/4/2022 12:30"/>
+                    <MsgTitle
+                        type={this.props.type}
+                        booking= {this.props.booking}/>
                 </div>
                 <div className="msg-con-txt">
-                    <MsgTxt txt="Intelligent personal assistant scheduled this meeting for you."/>
+                    <MsgTxt txt={this.props.txt}
+                            attend={this.props.attend}/>
                 </div>
                 <div className="msg-con-opera">
                     <MsgOperaScheduled/>
