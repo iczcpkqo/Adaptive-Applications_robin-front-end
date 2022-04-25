@@ -58,7 +58,6 @@
 }
 
 .chat-body {
-    border: solid 1px red;
     height: 500px;
     overflow: scroll;
     padding-top: 0;
