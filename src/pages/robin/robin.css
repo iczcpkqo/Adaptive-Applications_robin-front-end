@@ -32,12 +32,14 @@
     bottom: 0;
 }
 #chat,
+#question,
 #calendar {
     display: inline-block;
     vertical-align: top;
 }
 
-#chat{
+#chat,
+#question{
     bottom: 0;
     left: 20px;
     position: fixed;
@@ -51,4 +53,9 @@
     right: 20px;
     width: 850px;
     z-index: 100;
+    padding-bottom: 90px;
 }
+#question{
+    left: 440px;
+}
+

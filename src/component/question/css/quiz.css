@@ -1,0 +1,23 @@
+.questions-box{
+    padding-top: 25px;
+}
+
+.quiz{
+    padding-bottom: 25px;
+}
+
+.quiz>.quiz-box{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0 20px 30px;
+    width: 360px;
+}
+
+.quiz>.quiz-box .quiz-tit span.icon{
+    padding-right: 3px;
+}
+
+.quiz>.quiz-box .quiz-opera{
+    padding-top: 20px;
+}

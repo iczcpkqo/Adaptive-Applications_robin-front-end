@@ -6,6 +6,7 @@ import User from "../../model/User"
 import StoreUser from "../../utils/StoreUser";
 import Chat from "../../component/chat/chat"
 import Dateviewer from "../../component/dateviewer/dateviewer"
+import Question from "../../component/question/question";
 const dateFormat = 'HH:mm DD-MM-YYYY';
 const GET = 'GET'
 const POST = 'POST'
@@ -38,9 +39,13 @@ export default class Robin extends Component{
                 <div id="chat">
                     <Chat/>
                 </div>
+                <div id="question">
+                    <Question/>
+                </div>
                 <div id="calendar">
                     <Dateviewer />
                 </div>
+
             </div>
         )
     }
