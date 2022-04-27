@@ -12,35 +12,11 @@ const POST = 'POST'
 const UPDATE = 'PUT'
 const DELETE = 'POST'
 
-export default class Quiz extends Component{
+export default class quiztwotime extends Component{
 
     constructor(props) {
         super(props);
-        this.state = {
-            type: this.props.type,
-            id: this.props.id,
-            tit: this.props.tit,
-            selected: this.props.selected,
-            options: this.props.options,
-            value: ""
-        };
     }
-
-    // getOptions(options){
-    //     return (
-    //         options.map((item)=>{
-    //             return(
-    //             );
-    //         })
-    //     )
-    // }
-
-    onRadioChange = e => {
-        console.log('radio1 checked', e.target.value);
-        this.setState({
-            selected: e.target.value,
-        });
-    };
 
     render() {
         return (
@@ -52,11 +28,8 @@ export default class Quiz extends Component{
                     </div>
                     <div className="quiz-opera">
 
-                        <Radio.Group
-                            name={this.state.id}
-                            options={this.state.options}
-                            onChange={this.onRadioChange}
-                            value={this.state.selected}/>
+                        <b>Some operation of this quiz</b>
+
                     </div>
                 </div>
             </div>

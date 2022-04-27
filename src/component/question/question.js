@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import User from "../../model/User"
 import StoreUser from "../../utils/StoreUser";
 import Dialogue from "../chat/dialogue";
-import Quiz from "./quiz/quiz";
+import Quizradio from "./quiz/quizradio";
 import {Table, Space, Button} from 'antd';
 import moment from 'moment';
 import ajax from "../../api/ajax";
@@ -78,7 +78,7 @@ export default class Question extends Component{
         return (
             q.map((item) => {
                 return (
-                    <Quiz id={item.id}
+                    <Quizradio id={item.id}
                           tit={item.tit}
                           selected={item.selected}
                           options={item.options}/>
