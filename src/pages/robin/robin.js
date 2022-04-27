@@ -21,14 +21,12 @@ export default class Robin extends Component{
     }
 
     async getMy(){
-        this.setState({data: (await ajax("/", {adoId: StoreUser.getMyId()}, 'POST')).data.map((o)=>{
+        this.setState({data: (await ajax("/", {userId: StoreUser.getMyId()}, 'POST')).data.map((o)=>{
                 let d = {};
-                d.key = o.athleteId;
-                d.id = o.athleteId;
-                d.name = o.athleteName;
-                d.email = o.athleteEmail;
-                d.country = o.location.country;
-                d.region = o.location.region;
+                d.key = o.key;
+                d.id = o.id;
+                d.name = o.name;
+                d.email = o.email;
                 return d;
             })});
     }

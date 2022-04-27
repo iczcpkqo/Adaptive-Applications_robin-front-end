@@ -117,3 +117,69 @@
 }
 
 .msg-contention>.msg-con-opera>.msg-opera .opera-btn Button{ }
+
+.msg-textmsg {
+
+}
+
+.msg-textmsg .msg-textmsg-box{
+    padding: 10px 20px 10px 10px;
+}
+
+.msg-textmsg .msg-textmsg-box .msg-send{
+    font-size: 22px;
+    text-align: right;
+}
+
+.msg-textmsg .msg-textmsg-box .tip{
+    /*background-color: var(--v1-clr-b4);*/
+    animation-name: new-send-tip;
+    animation-fill-mode: backwards;
+    animation-duration: 0.2s;
+    background-color: var(--v1-clr-b3);
+    border: solid 1px var(--v1-clr-e2);
+    border-radius: 12px 0 12px 12px;
+    box-shadow: 2px 2px 5px var(--v1-clr-b3);
+    display: inline-block;
+    font-size: 14px;
+    line-height: normal;
+    max-width: 70%;
+    padding: 10px;
+    text-align: left;
+    white-space: normal;
+    word-break: break-all
+}
+
+@keyframes new-send-tip {
+    from{
+        color: transparent;
+        font-size: 0;
+        height: 0;
+        width: 0;
+        opacity: 0;
+        white-space: nowrap;
+    }
+    to{
+        color: transparent;
+        height: 38px;
+        width: 80px;
+        opacity: 1;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

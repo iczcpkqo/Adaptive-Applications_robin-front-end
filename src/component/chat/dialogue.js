@@ -16,19 +16,25 @@ export default class Dialogue extends Component{
 
     constructor(props) {
         super(props);
-        this.state = { visible: this.props.visible || false }
+        this.state = {
+            visible: this.props.visible || false ,
+            appsVisible: this.props.appsVisible || false
+        }
     }
 
-    toggle(){
+    toggleDialogue(){
         this.setState({visible: !this.state.visible});
     }
+    // drawerApps(){
+    //     this.setState({appsVisible: !this.state.appsVisible});
+    // }
 
     render() {
         return (
             <div className="chat">
                 <div className={this.state.visible? "chat-box": "chat-box clicked"}>
-                    <ChatTit txt={this.props.txt} onClick={()=>this.toggle()}/>
-                    <div className="chat-body">
+                    <ChatTit txt={this.props.txt} onClick={()=>this.toggleDialogue()}/>
+                    <div className={this.props.appsVisible ? "chat-body open-app": "chat-body"}>
                         {this.props.children}
                     </div>
                 </div>

@@ -1,0 +1,50 @@
+.booking{
+
+}
+
+.booking .pic{
+
+}
+
+.booking .name{
+    text-align: center;
+}
+
+.booking .name label{
+    font-size: 7px;
+    font-weight: bolder;
+    width: 100%;
+}
+
+.booking .feature{ }
+
+.booking .feature .feature-box{
+    padding: 30px;
+    padding-top: 0;
+}
+
+.booking .feature .feature-box>*{
+    margin-bottom: 30px;
+}
+
+.booking .feature .feature-box>*>label{
+    color: var(--v1-clr-a2);
+    font-weight: bolder;
+    line-height: 50px;
+}
+.booking .feature .feature-box .time-picker{
+
+}
+
+.booking .feature .feature-box .input-txt{
+
+}
+
+.booking .feature .feature-box .confirm{
+    text-align: right;
+}
+
+.booking .feature .feature-box .confirm .btn{
+    display: inline-block;
+    margin-left: 20px;
+}

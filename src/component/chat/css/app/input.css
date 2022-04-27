@@ -1,0 +1,17 @@
+.app-input {
+}
+
+.app-input .input-box {
+}
+
+.app-input .input-box .input-text,
+.app-input .input-box .input-button {
+    display: inline-block;
+}
+
+.app-input .input-box .input-text {
+    width: 270px;
+}
+
+.app-input .input-box .input-button {
+}

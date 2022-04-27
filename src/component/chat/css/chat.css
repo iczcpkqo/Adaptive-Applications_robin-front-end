@@ -102,6 +102,32 @@
 
 .chat-body {
     height: 500px;
-    overflow: scroll;
+    /*overflow: scroll;*/
     padding-top: 0;
+    position: relative;
+}
+
+.chat-body.messages,
+#input-con. {
+    display: inline-block;
+}
+
+.chat-body .messages {
+    height: 457px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.chat-body.open-app .messages {
+    height: 360px;
+}
+
+#input-con {
+}
+
+#input-con .panel-app{
+    display: none;
+}
+
+.open-app #input-con .panel-app{
+    display: block;
 }

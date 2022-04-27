@@ -18,6 +18,7 @@ import User from "../../model/User"
 import { withRouter } from 'react-router-dom';
 import {formateDate} from "../../utils/dateUtils";
 import Robin from "../robin/robin"
+import Questions from "../questions/questions"
 const { confirm } = Modal;
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -109,9 +110,11 @@ const { SubMenu } = Menu;
                     <div>
                         <Switch>
                             <Route path='/home/robin' component={Robin}/>
+                            <Route path='/home/questions' component={Questions}/>
                         </Switch>
                     </div>
                 </Content>
+
                 <Footer style={{ textAlign: 'center' }}>Adaptive Application Group Robin</Footer>
             </Layout>
         )
