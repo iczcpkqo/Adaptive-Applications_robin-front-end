@@ -35,6 +35,7 @@ class  LoginHome extends Component{
      onFinish = async (e) => {
          // window.location.href= "../home/robin";
          window.location.href= "../home/questions";
+         window.location.href= "../home/robin";
 
          withRouter(LoginHome)
          let response =  await ajax("/user/login", {
