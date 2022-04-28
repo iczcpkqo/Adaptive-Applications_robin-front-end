@@ -111,7 +111,6 @@
 }
 
 .chat-panel > .panel-box > .panel-app .app .pic>span {
-
 }
 
 .open-app .chat-panel > .panel-box > .panel-app .app .feature{
@@ -127,7 +126,6 @@
     position: absolute;
     top: 0;
 }
-
 
 .chat-panel > .panel-box > .panel-app .app .feature .close-app {
     cursor: pointer;

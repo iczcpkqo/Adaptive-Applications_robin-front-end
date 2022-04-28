@@ -30,7 +30,7 @@ export default class Quizinput extends Component{
                     <div className="quiz-opera">
 
                         <b>Some operation of this quiz</b>
-                        
+
                     </div>
                 </div>
             </div>

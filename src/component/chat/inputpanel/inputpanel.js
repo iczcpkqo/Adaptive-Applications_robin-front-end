@@ -6,6 +6,8 @@ import moment from 'moment';
 import ajax from "../../../api/ajax";
 import Chatinput from "./chatinput/chatinput";
 import Booking from "./booking/booking";
+import InitQuiz from "./initquiz/initquiz";
+import Updatequiz from "./updatequiz/updatequiz";
 const dateFormat = 'HH:mm DD-MM-YYYY';
 const GET = 'GET'
 const POST = 'POST'
@@ -41,10 +43,10 @@ export default class Inputpanel extends Component{
                             <Booking/>
                         </div>
                         <div className="app">
-                            <Booking/>
+                            <InitQuiz/>
                         </div>
                         <div className="app">
-                            <Booking/>
+                            <Updatequiz/>
                         </div>
                     </div>
                 </div>

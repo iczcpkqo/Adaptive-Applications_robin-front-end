@@ -1,0 +1,64 @@
+.init-quiz{
+
+}
+
+.init-quiz .pic{
+
+}
+
+.init-quiz .name{
+    text-align: center;
+}
+
+.init-quiz .name label{
+    font-size: 7px;
+    font-weight: bolder;
+    width: 100%;
+}
+
+.init-quiz .feature{ }
+
+.init-quiz .feature .feature-box{
+    padding: 30px;
+    padding-top: 0;
+}
+
+.init-quiz .feature .feature-box>*{
+    margin-bottom: 10px;
+}
+
+.init-quiz .feature .feature-box .feature-ctl{
+    display: inline-block;
+    width: 100%;
+}
+
+.init-quiz .feature .feature-box>*>label{
+    color: var(--v1-clr-a2);
+    font-weight: bolder;
+    line-height: 50px;
+    text-align: right;
+    width: 65px;
+}
+
+.init-quiz .feature .feature-box .time-picker{
+
+}
+
+.init-quiz .feature .feature-box .input-txt{
+
+}
+
+.init-quiz .feature .feature-box .select-radio .ant-radio-button-wrapper-checked{
+    background-color: var(--v1-clr-a2);
+    color: white;
+}
+
+.init-quiz .feature .feature-box .confirm{
+    text-align: right;
+    padding-top: 20px;
+}
+
+.init-quiz .feature .feature-box .confirm .btn{
+    display: inline-block;
+    margin-left: 20px;
+}

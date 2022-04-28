@@ -7,6 +7,7 @@ import React, {Component} from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import Login from "./pages/login/login.js";
 import Home from "./pages/home/home"
+import Robin from "./pages/robin/robin"
 export default class App extends Component{
     render() {
         return (

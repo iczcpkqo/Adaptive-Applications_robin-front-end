@@ -24,20 +24,35 @@
 }
 
 .booking .feature .feature-box>*{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.booking .feature .feature-box .feature-ctl{
+    display: inline-block;
+    padding-left: 20px;
+    width: 272px;
 }
 
 .booking .feature .feature-box>*>label{
     color: var(--v1-clr-a2);
+    display: inline-block;
     font-weight: bolder;
     line-height: 50px;
+    text-align: right;
+    width: 65px;
 }
+
 .booking .feature .feature-box .time-picker{
 
 }
 
 .booking .feature .feature-box .input-txt{
 
+}
+
+.booking .feature .feature-box .select-radio .ant-radio-button-wrapper-checked{
+    background-color: var(--v1-clr-a2);
+    color: white;
 }
 
 .booking .feature .feature-box .confirm{

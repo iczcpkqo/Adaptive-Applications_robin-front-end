@@ -29,6 +29,10 @@ const { SubMenu } = Menu;
         currentTime:formateDate(Date.now()),
         current: 'mail',
     };
+    constructor(props) {
+        super(props);
+    }
+
       this = this
     onCollapse = collapsed => {
         console.log(collapsed);

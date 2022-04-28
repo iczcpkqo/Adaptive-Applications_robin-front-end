@@ -4,6 +4,7 @@ import StoreUser from "../../utils/StoreUser";
 import ChatTit from "./tit/chatTit";
 import Dialogue from "./dialogue";
 import Msg from "./msg/msg";
+import MsgEvent from "./msg/contention/msgEvent";
 import Msgtext from "./textmsg/textmsg";
 import Inputpanel from "./inputpanel/inputpanel";
 import {Table, Space, Button} from 'antd';
@@ -23,7 +24,33 @@ export default class Chat extends Component{
         this.state = {
             msg:[],
             appsVisible: false,
-            shouldScroll: true
+            shouldScroll: true,
+            dataEvent: {
+                    "Attendees": [
+                        {
+                            "DisplayName": "Pratik",
+                            "Email": "pratik@tcd.ie"
+                        },
+                        {
+                            "DisplayName": "Chaitanya",
+                            "Email": "chaitanya@tcd.ie"
+                        },
+                        {
+                            "DisplayName": "Ciara",
+                            "Email": "ciara@tcd.ie"
+                        },
+                        {
+                            "DisplayName": "Maddie",
+                            "Email": "maddie@tcd.ie"
+                        }
+                    ],
+                    "Category": "Team Meeting",
+                    "End": "2022-02-09T14:00:00Z",
+                    "Location": "LG12 GLASS ROOMS",
+                    "Period": "Semester",
+                    "Start": "2022-02-09T11:00:00Z",
+                    "Title": "IOT GROUP MEETING"
+                }
         }
         // alert(this.props.ste);
     }
@@ -58,17 +85,21 @@ export default class Chat extends Component{
             <Dialogue visible="true" appsVisible={this.state.appsVisible? "true":""} txt="Chat" >
             {/*<Dialogue visible="true" txt="Chat" >*/}
                 <div ref={this.msgBox} className="messages">
-                    <Msg type="SCHEDULED"
-                         time="1/4/2022 12:30"
-                         booking="Saturday, 2/4/2022 at 11:30AM"
-                         txt="Intelligent personal assistant scheduled meeting for you."
-                         attend="Xiang Mao, Yan Zhu, Yu Xin"/>
+                    {/*<Msg type="SCHEDULED"*/}
+                    {/*     time="1/4/2022 12:30"*/}
+                    {/*     booking="Saturday, 2/4/2022 at 11:30AM"*/}
+                    {/*     txt="Intelligent personal assistant scheduled meeting for you."*/}
+                    {/*     attend="Xiang Mao, Yan Zhu, Yu Xin"/>*/}
 
-                    <Msg type="SUGGESTION"
-                         time="1/4/2022 12:30"
-                         booking="Saturday, 2/4/2022 at 11:30AM"
-                         txt="Intelligent personal assistant suggestion meeting for you."
-                         attend="Xiang Mao, Yan Zhu, Yu Xin"/>
+                    {/*<Msg type="SUGGESTION"*/}
+                    {/*     time="1/4/2022 12:30"*/}
+                    {/*     booking="Saturday, 2/4/2022 at 11:30AM"*/}
+                    {/*     txt="Intelligent personal assistant suggestion meeting for you."*/}
+                    {/*     attend="Xiang Mao, Yan Zhu, Yu Xin"/>*/}
+
+                    <MsgEvent dataEvent={this.state.dataEvent}/>
+                    <MsgEvent dataEvent={this.state.dataEvent}/>
+                    <MsgEvent dataEvent={this.state.dataEvent}/>
 
                     {this.state.msg.map((item) => {
                         // return (<Msgtext>{item}</Msgtext>);

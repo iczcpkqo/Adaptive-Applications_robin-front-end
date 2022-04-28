@@ -22,7 +22,7 @@ export default class Login extends Component{
 
     constructor(props) {
         super(props);
-        // window.location.href= "../home/chat/chat";
+        window.location.href= "../home/robin";
     }
 
     showDrawer = () => {
