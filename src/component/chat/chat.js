@@ -28,7 +28,7 @@ export default class Chat extends Component{
             dataEvent: []
         }
         // alert(this.props.ste);
-        this.getAllEvent();
+        // this.getAllEvent();
     }
 
     async getAllEvent(){
@@ -83,7 +83,7 @@ export default class Chat extends Component{
 
                     {/*<MsgEvent dataEvent={this.state.dataEvent}/>*/}
 
-                    {this.state.dataEvent.map(e => e)}
+                    {/*{this.state.dataEvent.map(e => e)}*/}
                     {this.state.msg.map(e => e)}
 
                 </div>
