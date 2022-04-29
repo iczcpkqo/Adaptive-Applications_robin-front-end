@@ -31,7 +31,7 @@ export default class Inputpanel extends Component{
                 <div className="panel-box">
                     <div className="panel-text">
                         <div className="p-t-input">
-                            <Chatinput sendMsg={e=>this.props.sendMsg(e)}/>
+                            <Chatinput sendMsg={e=>this.props.sendMsg(e)} refreshCalendar={e=>this.props.refreshCalendar(e)}/>
                         </div>
                         <div className="p-t-app" onClick={()=>this.props.appsVisible()}>
                             <PlusCircleOutlined className="plus"/>

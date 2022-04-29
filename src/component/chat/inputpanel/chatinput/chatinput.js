@@ -142,7 +142,8 @@ export default class Chatinput extends Component{
                                             }) : "",
                                             Start: item.Start
                                           }}
-                                          isSuggestion={true}/>);
+                                          isSuggestion={true}
+                                          refreshCalendar={e => this.props.refreshCalendar(e)} />);
                 });
 
             } else{

@@ -33,7 +33,7 @@ export default class MsgEvent extends Component {
         return (
             o&&this.state.avaOpera ?
             <div className="msg-con-opera">
-                <MsgOperaBook onSchedule={e=>this.onSchedule(e)}/>
+                <MsgOperaBook onSchedule={e=>this.onSchedule(e)} refreshCalendar={e=>this.props.refreshCalendar(e)}/>
             </div>
             : ""
         );
@@ -42,6 +42,7 @@ export default class MsgEvent extends Component {
     onSchedule(dataEvent){
         this.createMeeting();
         this.setState({avaOpera:""});
+        this.props.refreshCalendar();
     }
 
 
