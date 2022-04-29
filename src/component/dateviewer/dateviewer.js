@@ -121,7 +121,7 @@ export default class Dateviewer extends Component {
         return (
             <>
                 <div className="dateviewer">
-                    <Calendar dateCellRender={(val)=>this.setDay(val)} monthCellRender={(val)=>this.monthCellRender(val)} />
+                    <Calendar dateCellRender={(val)=>this.dateCellRender(val)} monthCellRender={(val)=>this.monthCellRender(val)} />
                     {/*<Calendar dateCellRender={(val) => this.setDay(val)}/>*/}
                 </div>
             </>
