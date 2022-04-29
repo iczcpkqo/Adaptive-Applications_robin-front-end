@@ -137,7 +137,7 @@ export default class Chatinput extends Component{
                                             Attendees: "Attendees" in item ? item.Attendees.split(" ").map(i=>{
                                                return {
                                                     "DisplayName": i,
-                                                    "Email": ""
+                                                    "Email": "dummy"+i+"@tcd.ie"
                                                }
                                             }) : "",
                                             Start: item.Start
