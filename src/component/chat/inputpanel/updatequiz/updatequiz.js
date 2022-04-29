@@ -21,7 +21,7 @@ export default class Updatequiz extends Component {
         super(props);
         this.state = {
             using: false,
-            UserId: 1,
+            UserId: 12,
             WorkingHours: {
                 StartTime: "",
                 EndTime: ""
@@ -63,7 +63,7 @@ export default class Updatequiz extends Component {
     async updateQuiz(){
         console.log(this.state);
         return (await ajax("/update-model", {
-            UserId: 1,
+            UserId: 12,
             WorkingHours: this.state.WorkingHours,
             BreakTime: this.state.BreakTime,
             TimePreference: this.state.TimePreference,
@@ -74,7 +74,7 @@ export default class Updatequiz extends Component {
 
     emptyAll(){
         this.setState({
-            UserId: 1,
+            UserId: 12,
             WorkingHours: {
                 StartTime: "",
                 EndTime: ""

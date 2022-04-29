@@ -21,7 +21,7 @@ export default class InitQuiz extends Component {
         super(props);
         this.state = {
             using: false,
-            UserId: 1,
+            UserId: 12,
             WorkingHours: {
                 StartTime: "",
                 EndTime: ""
@@ -76,7 +76,7 @@ export default class InitQuiz extends Component {
     async initQuiz(){
         console.log(this.state);
         return (await ajax("/store-initial-model", {
-            UserId: 1,
+            UserId: 12,
             WorkingHours: this.state.WorkingHours,
             BreakTime: this.state.BreakTime,
             TimePreference: this.state.TimePreference,
@@ -92,7 +92,7 @@ export default class InitQuiz extends Component {
 
     emptyAll(){
         this.setState({
-            UserId: 1,
+            UserId: 12,
             WorkingHours: {
                 StartTime: "",
                 EndTime: ""
