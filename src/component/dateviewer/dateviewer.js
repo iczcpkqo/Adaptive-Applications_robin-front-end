@@ -18,6 +18,11 @@ export default class Dateviewer extends Component {
     constructor(props) {
         super(props);
         // this.state = {listEvents: []};
+        console.log("======");
+        console.log(this.props.calendarEvent);
+        console.log("---------------");
+        console.log(this.props.getCalData());
+
         this.state = {calendarEvent: this.props.calendarEvent||[],
         listEvents:[]
         };
@@ -51,12 +56,18 @@ export default class Dateviewer extends Component {
         // console.log(val.month());
         // console.log(val.date());
 
+        // this.setState({calendarEvent: this.props.getCalData});
+
         this.state.calendarEvent[val.month()] = this.state.calendarEvent[val.month()] || [];
         this.state.calendarEvent[val.month()][val.date()] = this.state.calendarEvent[val.month()][val.date()] || [];
         let listData = this.state.calendarEvent[val.month()][val.date()] || [];
 
         // console.log("######");
         // console.log(listData);
+
+
+        // console.log("######");
+        // console.log(this.props.getCalData());
 
         return (
             <ul className="events">
@@ -121,7 +132,7 @@ export default class Dateviewer extends Component {
         return (
             <>
                 <div className="dateviewer">
-                    <Calendar dateCellRender={(val)=>this.dateCellRender(val)} monthCellRender={(val)=>this.monthCellRender(val)} />
+                    <Calendar dateCellRender={(val)=>this.setDay(val)} monthCellRender={(val)=>this.monthCellRender(val)} />
                     {/*<Calendar dateCellRender={(val) => this.setDay(val)}/>*/}
                 </div>
             </>

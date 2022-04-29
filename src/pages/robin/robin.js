@@ -21,7 +21,8 @@ export default class Robin extends Component{
         super(props);
         this.getMy();
         this.state = {
-            calendarEvent:""
+            calendarEvent:"",
+            calVisible: false
         }
         this.onLoadCalendarEvent();
     }
@@ -42,7 +43,7 @@ export default class Robin extends Component{
         // ',
 
 
-        (await ajax("/event/read_all", {}, 'GET')).data.map(item=>{
+        let de = (await ajax("/event/read_all", {}, 'GET')).data.map(item=>{
             let d = moment(item.Start, "YYYY-MM-DD HH:mm:ss");
             data[d.month()] = data[d.month()] || [];
             data[d.month()][d.date()] = data[d.month()][d.date()] || [];
@@ -50,9 +51,16 @@ export default class Robin extends Component{
                type: "Lecture" === item.Category ? "success" : "error",
                content: item.Title
            });
-       });
+        });
 
-        this.setState({calendarEvent: data})
+        if (de){
+            this.setState({calendarEvent: data, calVisible: true})
+
+            console.log("after: -=--=====");
+            console.log(data);
+        }
+
+
         // console.log("===========");
         // console.log(this.state.calendarEvent);
 
@@ -74,6 +82,11 @@ export default class Robin extends Component{
             })});
     }
 
+    getCalData(){
+        return this.state.calendarEvent;
+    }
+
+
 
     render() {
         return (
@@ -85,7 +98,17 @@ export default class Robin extends Component{
                 {/*    /!*<Question/>*!/*/}
                 {/*</div>*/}
                 <div id="calendar">
-                    <Dateviewer calendarEvent={this.state.calendarEvent}/>
+                    {(()=>{
+                        if(this.state.calVisible){
+                            console.log("Show Calendar:");
+                            return (<Dateviewer calendarEvent={this.state.calendarEvent} getCalData={e=>this.getCalData(e)}/>);
+                        }else{
+                            console.log("Data is not ready, So no Calendar");
+                            return "";
+                        }
+                    })()}
+
+
                 </div>
 
             </div>
