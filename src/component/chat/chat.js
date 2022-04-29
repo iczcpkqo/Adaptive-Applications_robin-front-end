@@ -88,7 +88,7 @@ export default class Chat extends Component{
 
                 </div>
                 <div id="input-con">
-                    <Inputpanel sendMsg={e=>this.sendMsg(e)} appsVisible={()=>this.drawerApps()}/>
+                    <Inputpanel sendMsg={e=>this.sendMsg(e)} appsVisible={()=>this.drawerApps()} refreshCalendar={e=>this.props.refreshCalendar(e)}/>
                 </div>
             </Dialogue>
         )

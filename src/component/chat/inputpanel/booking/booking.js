@@ -91,9 +91,11 @@ export default class Booking extends Component {
             Start: this.state.start,
             End: this.state.end,
             Attendees: this.state.attendees
-        }, 'POST'));
-
+        }, 'POST').then(e=>{
+            this.props.refreshCalendar();
+        }));
     }
+
 
     onNoClick(){
         this.onToggleApp();
@@ -134,7 +136,7 @@ export default class Booking extends Component {
                                 Title:
                             </label>
                             <span className="feature-ctl">
-                                <Input placeholder="Input any you want." onChange={e=>this.onTitleChanged(e)}/>
+                                <Input value={this.state.title} placeholder="Input any you want." onChange={e=>this.onTitleChanged(e)}/>
                             </span>
                         </div>
 
@@ -144,7 +146,7 @@ export default class Booking extends Component {
                                 Location:
                             </label>
                             <span className="feature-ctl">
-                                <Input placeholder="Input any you want." onChange={e=>this.onLocationChanged(e)}/>
+                                <Input value={this.state.location} placeholder="Input any you want." onChange={e=>this.onLocationChanged(e)}/>
                             </span>
                         </div>
 

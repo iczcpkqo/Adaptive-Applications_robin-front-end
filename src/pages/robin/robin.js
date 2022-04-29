@@ -27,6 +27,11 @@ export default class Robin extends Component{
         this.onLoadCalendarEvent();
     }
 
+    refreshCalendar(){
+        this.setState({ calVisible: false });
+        this.onLoadCalendarEvent();
+    }
+
     async onLoadCalendarEvent(){
         let data = [[[]]];
 
@@ -92,7 +97,7 @@ export default class Robin extends Component{
         return (
             <div id="robin">
                 <div id="chat">
-                    <Chat onLoadDataEvent={e=>this.onLoadCalendarEvent(e)}/>
+                    <Chat onLoadDataEvent={e=>this.onLoadCalendarEvent(e)} refreshCalendar={e=>this.refreshCalendar(e)}/>
                 </div>
                 {/*<div id="question">*/}
                 {/*    /!*<Question/>*!/*/}

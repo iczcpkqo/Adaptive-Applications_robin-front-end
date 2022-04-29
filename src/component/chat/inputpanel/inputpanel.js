@@ -40,7 +40,7 @@ export default class Inputpanel extends Component{
                     </div>
                     <div className="panel-app">
                         <div className="app">
-                            <Booking/>
+                            <Booking refreshCalendar={e=>this.props.refreshCalendar(e)}/>
                         </div>
                         <div className="app">
                             <InitQuiz/>
