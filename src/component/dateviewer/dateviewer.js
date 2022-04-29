@@ -61,7 +61,8 @@ export default class Dateviewer extends Component {
         return (
             <ul className="events">
                 {(()=> {
-                    listData.map(item=>{
+                    console.log(val.month());
+                    return listData.map(item=>{
                         return (
                             <li key={item.content}>
                                 <Badge status={item.type} text={item.content}/>

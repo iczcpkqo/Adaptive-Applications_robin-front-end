@@ -43,7 +43,6 @@ export default class Robin extends Component{
 
 
         (await ajax("/event/read_all", {}, 'GET')).data.map(item=>{
-            console.log(item);
             let d = moment(item.Start, "YYYY-MM-DD HH:mm:ss");
             data[d.month()] = data[d.month()] || [];
             data[d.month()][d.date()] = data[d.month()][d.date()] || [];
@@ -54,8 +53,8 @@ export default class Robin extends Component{
        });
 
         this.setState({calendarEvent: data})
-        console.log("===========");
-        console.log(this.state.calendarEvent);
+        // console.log("===========");
+        // console.log(this.state.calendarEvent);
 
         // console.log(moment(item.Start, "YYYY-MM-DD HH:mm:ss").date());
         // console.log(moment(item.Start, "YYYY-MM-DD HH:mm:ss").format("M-D"));
