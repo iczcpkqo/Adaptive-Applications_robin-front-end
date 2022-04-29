@@ -25,37 +25,21 @@ export default class Chat extends Component{
             msg:[],
             appsVisible: false,
             shouldScroll: true,
-            dataEvent: {
-                    "Attendees": [
-                        {
-                            "DisplayName": "Pratik",
-                            "Email": "pratik@tcd.ie"
-                        },
-                        {
-                            "DisplayName": "Chaitanya",
-                            "Email": "chaitanya@tcd.ie"
-                        },
-                        {
-                            "DisplayName": "Ciara",
-                            "Email": "ciara@tcd.ie"
-                        },
-                        {
-                            "DisplayName": "Maddie",
-                            "Email": "maddie@tcd.ie"
-                        }
-                    ],
-                    "Category": "Team Meeting",
-                    "End": "2022-02-09T14:00:00Z",
-                    "Location": "LG12 GLASS ROOMS",
-                    "Period": "Semester",
-                    "Start": "2022-02-09T11:00:00Z",
-                    "Title": "IOT GROUP MEETING"
-                }
+            dataEvent: []
         }
         // alert(this.props.ste);
+        this.getAllEvent();
+    }
+
+    async getAllEvent(){
+        this.setState({dataEvent: (await ajax("/event/read_all", {}, 'GET')).data.map((item) => {
+                return (<MsgEvent dataEvent={item}/>);
+            }), shouldScroll: true});
+        // this.state.shouldScroll = true;
     }
 
     sendMsg(msg){
+        // this.state.msg.push(msg);
         this.state.msg.push(msg);
         this.setState({msg: this.state.msg});
         this.state.shouldScroll = true;
@@ -97,14 +81,10 @@ export default class Chat extends Component{
                     {/*     txt="Intelligent personal assistant suggestion meeting for you."*/}
                     {/*     attend="Xiang Mao, Yan Zhu, Yu Xin"/>*/}
 
-                    <MsgEvent dataEvent={this.state.dataEvent}/>
-                    <MsgEvent dataEvent={this.state.dataEvent}/>
-                    <MsgEvent dataEvent={this.state.dataEvent}/>
+                    {/*<MsgEvent dataEvent={this.state.dataEvent}/>*/}
 
-                    {this.state.msg.map((item) => {
-                        // return (<Msgtext>{item}</Msgtext>);
-                        return (<Msgtext text={item}/>);
-                    })}
+                    {this.state.dataEvent.map(e => e)}
+                    {this.state.msg.map(e => e)}
 
                 </div>
                 <div id="input-con">

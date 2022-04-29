@@ -37,13 +37,14 @@ export default class InitQuiz extends Component {
 
     onToggleApp() {
         this.setState({using: !this.state.using});
+        this.emptyAll();
     }
 
     onWorkingChanged(time){
         this.setState({
             WorkingHours: {
-                StartTime: time[0].format("hh:mm"),
-                EndTime: time[0].format("hh:mm")
+                StartTime: time[0].format("HH:mm"),
+                EndTime: time[0].format("HH:mm")
             }
         });
     }
@@ -51,8 +52,8 @@ export default class InitQuiz extends Component {
     onBreakingChanged(time){
         this.setState({
             BreakTime: {
-                StartTime: time[0].format("hh:mm"),
-                EndTime: time[0].format("hh:mm")
+                StartTime: time[0].format("HH:mm"),
+                EndTime: time[0].format("HH:mm")
             },
         });
     }
@@ -66,11 +67,43 @@ export default class InitQuiz extends Component {
     }
 
     onYesClick(){
+        this.onToggleApp();
+        let repo = this.initQuiz();
+        this.emptyAll();
+        console.log(repo);
+    }
+
+    async initQuiz(){
+        console.log(this.state);
+        return (await ajax("/store-initial-model", {
+            UserId: 1,
+            WorkingHours: this.state.WorkingHours,
+            BreakTime: this.state.BreakTime,
+            TimePreference: this.state.TimePreference,
+            WeatherPreference: this.state.WeatherPreference
+        }, 'POST'));
 
     }
 
     onNoClick(){
+        this.onToggleApp();
+        this.emptyAll();
+    }
 
+    emptyAll(){
+        this.setState({
+            UserId: 1,
+            WorkingHours: {
+                StartTime: "",
+                EndTime: ""
+            },
+            BreakTime: {
+                StartTime: "",
+                EndTime: ""
+            },
+            TimePreference: "",
+            WeatherPreference: ""
+        });
     }
 
     render() {
@@ -98,7 +131,7 @@ export default class InitQuiz extends Component {
                                 Working Hours:
                             </label>
                             <span className="feature-ctl">
-                                <TimePicker.RangePicker format="hh:mm" onChange={e=>this.onWorkingChanged(e)}/>
+                                <TimePicker.RangePicker format="HH:mm" onChange={e=>this.onWorkingChanged(e)}/>
                             </span>
                         </div>
 
@@ -110,7 +143,7 @@ export default class InitQuiz extends Component {
                                 Break Time:
                             </label>
                             <span className="feature-ctl">
-                                <TimePicker.RangePicker format="hh:mm" onChange={e=>this.onBreakingChanged(e)}/>
+                                <TimePicker.RangePicker format="HH:mm" onChange={e=>this.onBreakingChanged(e)}/>
                             </span>
                         </div>
 

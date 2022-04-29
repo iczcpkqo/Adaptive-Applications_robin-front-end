@@ -32,13 +32,14 @@ export default class Updatequiz extends Component {
 
     onToggleApp() {
         this.setState({using: !this.state.using});
+        this.emptyAll();
     }
 
     onWorkingChanged(time){
         this.setState({
             WorkingHours: {
-                StartTime: time[0].format("hh:mm"),
-                EndTime: time[0].format("hh:mm")
+                StartTime: time[0].format("HH:mm"),
+                EndTime: time[0].format("HH:mm")
             }
         });
     }
@@ -48,11 +49,38 @@ export default class Updatequiz extends Component {
     }
 
     onYesClick(){
-
+        this.onToggleApp();
+        let repo = this.updateQuiz();
+        this.emptyAll();
+        console.log(repo);
     }
 
     onNoClick(){
+        this.onToggleApp();
+        this.emptyAll();
+    }
 
+    async updateQuiz(){
+        console.log(this.state);
+        return (await ajax("/update-model", {
+            UserId: 1,
+            WorkingHours: this.state.WorkingHours,
+            BreakTime: this.state.BreakTime,
+            TimePreference: this.state.TimePreference,
+            WeatherPreference: this.state.WeatherPreference
+        }, 'POST'));
+
+    }
+
+    emptyAll(){
+        this.setState({
+            UserId: 1,
+            WorkingHours: {
+                StartTime: "",
+                EndTime: ""
+            },
+            WeatherPreference: ""
+        });
     }
 
     render() {
@@ -80,7 +108,7 @@ export default class Updatequiz extends Component {
                                 Working Hours:
                             </label>
                             <span className="feature-ctl">
-                                <TimePicker.RangePicker format="hh:mm" onChange={e=>this.onWorkingChanged(e)}/>
+                                <TimePicker.RangePicker format="HH:mm" onChange={e=>this.onWorkingChanged(e)}/>
                             </span>
                         </div>
 

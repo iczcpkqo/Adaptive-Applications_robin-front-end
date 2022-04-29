@@ -11,7 +11,7 @@ const DELETE = 'POST'
 const SCHEDULED = 'SCHEDULED'
 const SUGGESTION = 'SUGGESTION'
 
-export default class Textmsg extends Component{
+export default class TextmsgLeft extends Component{
 
     constructor(props) {
         super(props);
@@ -24,7 +24,7 @@ export default class Textmsg extends Component{
 
     render() {
         return (
-            <div className="msg-textmsg">
+            <div className="msg-textmsg left">
                 <div className="msg-textmsg-box">
                     <div className="msg-send">
                         <span className="tip">

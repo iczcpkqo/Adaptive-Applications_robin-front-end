@@ -22,40 +22,13 @@ export default class Booking extends Component {
         this.state = {
             using: false,
             title: "",
+            location: "",
             category: "Team Meeting",
             period: "Semester",
             start: "",
             end: "",
             attendees: ""
-    };
-
-
-            // {
-        //     "Title": "ASE GROUP MEETING", #REQUIRED
-        //     "Location": "SLS LAB",
-        //
-        //     # Can be either 'Team Meeting' or 'Lecture'
-        //     "Category": "Team Meeting", #REQUIRED
-        //
-        //     # Can be either 'Semester' or 'Break'
-        //     "Period": "Semester", #REQUIRED
-        //
-        //     # DateTime format to be exactly like this
-        //     "Start": "2022-01-24T12:00:00", #REQUIRED
-        //     "End": "2022-01-24T13:00:00",   #REQUIRED
-        //
-        //     # Can be empty ([]) as well
-        //     "Attendees": [
-        //       {
-        //           "DisplayName": "Aryan",
-        //           "Email": "aryan@tcd.ie"
-        //       },
-        //       {
-        //           "DisplayName": "Sophie",
-        //           "Email": "sophie@tcd.ie"
-        //       }
-        //     ]
-        // }
+        };
     }
 
     sendMsg(msg) {
@@ -64,6 +37,15 @@ export default class Booking extends Component {
 
     onToggleApp() {
         this.setState({using: !this.state.using});
+        this.emptyAll();
+    }
+
+    onTitleChanged(e){
+        this.setState({title: e.target.value});
+    }
+
+    onLocationChanged(e){
+        this.setState({location: e.target.value});
     }
 
     onPeriodChanged(e){
@@ -75,8 +57,8 @@ export default class Booking extends Component {
     }
 
     onTimeChanged(time){
-        this.setState({start:time[0].format("Do MMMM YYYY, hh:mm a")});
-        this.setState({end:time[1].format("Do MMMM YYYY, hh:mm a")});
+        this.setState({start:time[0].format("YYYY-MM-DD HH:mm")});
+        this.setState({end:time[1].format("YYYY-MM-DD HH:mm")});
     }
 
     onAttendChanged(e){
@@ -91,11 +73,43 @@ export default class Booking extends Component {
     }
 
     onYesClick(){
+        // https://robin-server-api.herokuapp.com/event/create
+        this.onToggleApp();
+        let repo = this.createMeeting();
+        this.emptyAll();
+        console.log(repo);
+    }
+
+    async createMeeting(meeting){
+
+        console.log(this.state);
+        return (await ajax("/event/create", {
+            Title: this.state.title,
+            Location: this.state.location,
+            Category: this.state.category,
+            Period: this.state.period,
+            Start: this.state.start,
+            End: this.state.end,
+            Attendees: this.state.attendees
+        }, 'POST'));
 
     }
 
     onNoClick(){
+        this.onToggleApp();
+        this.emptyAll();
+    }
 
+    emptyAll(){
+        this.setState( {
+            title: "",
+            location: "",
+            category: "Team Meeting",
+            period: "Semester",
+            start: "",
+            end: "",
+            attendees: ""
+        });
     }
 
     render() {
@@ -115,15 +129,25 @@ export default class Booking extends Component {
                     <div className="feature-box">
 
                         {/*"Title": "ASE GROUP MEETING", #REQUIRED*/}
-                        {/*"Location": "SLS LAB",*/}
                         <div className="input-txt">
                             <label>
                                 Title:
                             </label>
                             <span className="feature-ctl">
-                                <Input placeholder="Input any you want." />
+                                <Input placeholder="Input any you want." onChange={e=>this.onTitleChanged(e)}/>
                             </span>
                         </div>
+
+                        {/*"Location": "SLS LAB",*/}
+                        <div className="input-txt">
+                            <label>
+                                Location:
+                            </label>
+                            <span className="feature-ctl">
+                                <Input placeholder="Input any you want." onChange={e=>this.onLocationChanged(e)}/>
+                            </span>
+                        </div>
+
 
                         {/*# Can be either 'Team Meeting' or 'Lecture'*/}
                         {/*"Category": "Team Meeting", #REQUIRED*/}
@@ -234,17 +258,11 @@ export default class Booking extends Component {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // "Title": "ASE GROUP MEETING",
+    // "Category": "Team Meeting",
+    // "Period": "Semester",
+    // "Day": "Thursday",
+    // "Location": "SLS LAB",
+    // "End": "1.0",
+    // "Attendees": "Chaitanya Sheetal Ciara Maddie Aakash Sophie Aryan",
+    // "Start": "13:00:00Z"

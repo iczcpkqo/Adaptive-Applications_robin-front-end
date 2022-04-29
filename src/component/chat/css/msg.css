@@ -146,6 +146,10 @@
     text-align: right;
 }
 
+.msg-contention.event > .msg-con-txt > .attend-box{
+    word-break: break-word;
+}
+
 .msg-contention.event > .msg-con-txt > .attend-box .mailto{
     text-decoration: underline;
     padding: 0 5px ;
@@ -221,6 +225,19 @@
     }
 
 }
+
+.msg-textmsg.left .msg-textmsg-box .msg-send {
+    text-align: left;
+}
+
+.msg-textmsg.left .msg-textmsg-box .tip {
+    background-color: white;
+    border: solid 1px var(--v1-clr-a2);
+    border-radius: 0 12px 12px 12px;
+    box-shadow: var(--v1-clr-a2);
+    color: var(--v1-clr-a2);
+}
+
 
 
 
