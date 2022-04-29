@@ -124,7 +124,7 @@ export default class Updatequiz extends Component {
                                 >
                                     <Radio.Button value="sunny">sunny</Radio.Button>
                                     <Radio.Button value="rainy">rainy</Radio.Button>
-                                    <Radio.Button value="any">any</Radio.Button>
+                                    <Radio.Button value="none">none</Radio.Button>
                                 </Radio.Group>
 
                                 {/*<Select mode="multiple"*/}
