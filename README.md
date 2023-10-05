@@ -1,3 +1,16 @@
+> **Node.js Version: 16.18.0**
+> > **Removed**
+> > 1. Request to Back-end
+> > 2. Some Other detail pages
+> > 
+> > _this version only for demo some core functionality._
+
+# Start
+
+1. Install: `npm install`
+2. Run: `npm start`
+3. Check it on : http://localhost:3000/home/robin
+
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 

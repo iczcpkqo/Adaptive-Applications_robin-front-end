@@ -38,59 +38,11 @@ export default class Textmsg extends Component{
 }
 
 
-// [{
-//     "Title": "ASE GROUP MEETING",
-//     "Category": "Team Meeting",
-//     "Period": "Semester",
-//     "Day": "Thursday",
-//     "End": "1.0",
-//     "Location": "SLS LAB",
-//     "Attendees": "Chaitanya Sheetal Ciara Maddie Aakash Sophie Aryan",
-//     "Start": "12:00:00Z"
-// }, {
-//     "Title": "ASE GROUP MEETING",
-//     "Category": "Team Meeting",
-//     "Period": "Semester",
-//     "Day": "Thursday",
-//     "Location": "SLS LAB",
-//     "End": "1.0",
-//     "Attendees": "Chaitanya Sheetal Ciara Maddie Aakash Sophie Aryan",
-//     "Start": "13:00:00Z"
-// }, {
-//     "Title": "ASE GROUP MEETING",
-//     "Category": "Team Meeting",
-//     "Period": "Semester",
-//     "Day": "Thursday",
-//     "End": "2.0",
-//     "Start": "13:00:00Z",
-//     "Location": "LG12 GLASS ROOMS"
-// }, {
-//     "Title": "ASE GROUP MEETING",
-//     "Category": "Team Meeting",
-//     "Period": "Semester",
-//     "Day": "Thursday",
-//     "End": "2.0",
-//     "Start": "15:00:00Z",
-//     "Attendees": "Chaitanya Sheetal Ciara Maddie Aakash Sophie Aryan",
-//     "Location": "SLS LAB"
-// }, {
-//     "Title": "ASE GROUP MEETING",
-//     "Category": "Team Meeting",
-//     "Period": "Semester",
-//     "Day": "Thursday",
-//     "End": "1.0",
-//     "Start": "15:00:00Z",
-//     "Location": "ONLINE"
-// }, {
-//     "Title": "ASE GROUP MEETING",
-//     "Category": "Team Meeting",
-//     "Period": "Semester",
-//     "Day": "Thursday",
-//     "End": "3.0",
-//     "Start": "15:00:00Z",
-//     "Attendees": "Chaitanya Sheetal Ciara Maddie Aakash Sophie Aryan",
-//     "Location": "SLS LAB"
-// }]
+
+
+
+
+
 
 
 

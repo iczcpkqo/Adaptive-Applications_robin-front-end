@@ -7,7 +7,6 @@ import MsgTitle from "../title/msgTitle";
 import MsgTxt from "../txt/msgTxt";
 import MsgOperaScheduled from "../opera/msgOperaScheduled";
 import MsgOperaSuggestion from "../opera/msgOperaSuggestion";
-import MsgOperaBook from "../opera/msgOperaBook";
 import MsgFrame from "../../msg/msgFrame";
 
 const dateFormat = 'HH:mm DD-MM-YYYY';
@@ -20,62 +19,14 @@ export default class MsgEvent extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            dataEvent: this.props.dataEvent,
-            isSuggestion: this.props.isSuggestion || "",
-            avaOpera: true
-        }
-        this.state.dataEvent.End = moment(this.state.dataEvent.Start, "HH:mm:ss").add(this.state.dataEvent.End, "h").format("YYYY-MM-DD HH:mm");
-        this.state.dataEvent.Start = moment(this.state.dataEvent.Start, "HH:mm:ss").format("YYYY-MM-DD HH:mm");
-    }
+        this.state = { dataEvent: this.props.dataEvent }
 
-    showScheduleIt(o){
-        return (
-            o&&this.state.avaOpera ?
-            <div className="msg-con-opera">
-                <MsgOperaBook onSchedule={e=>this.onSchedule(e)} refreshCalendar={e=>this.props.refreshCalendar(e)}/>
-            </div>
-            : ""
-        );
-    }
-
-    onSchedule(dataEvent){
-        this.createMeeting();
-        this.setState({avaOpera:""});
-        this.props.refreshCalendar();
-    }
-
-
-    async createMeeting(meeting){
-        console.log(this.state.dataEvent.End);
-        console.log(this.state.dataEvent.Start);
-
-        // let e = this.state.dataEvent.End
-        // let s = this.state.dataEvent.Start
-        //
-        // let aa = moment(s, "HH:mm:ss");
-        // let aa = moment(s);
-        // let aa = moment("15:00", "hh:mm");
-
-        // console.log(aa.add(e, "h").format("HH:mm"));;
-
-        console.log(this.state.dataEvent);
-
-        return (await ajax("/event/create", {
-            Title: this.state.dataEvent.Title,
-            Location: this.state.dataEvent.Location,
-            Category: this.state.dataEvent.Category,
-            Period: this.state.dataEvent.Period,
-            Start: this.state.dataEvent.Start,
-            End: this.state.dataEvent.End,
-            Attendees: this.state.dataEvent.Attendees
-        }, 'POST'));
 
     }
 
     render() {
         return (
-            <MsgFrame>
+            <MsgFrame time="16:00">
                 <div className="msg-contention event">
                     <div className="msg-con-tit">
                         <div className="msg-title">
@@ -113,22 +64,18 @@ export default class MsgEvent extends Component {
                                 Attendees:
                                 {(()=>{
                                     return (
-                                        // "Attendees" in this.state.dataEvent ? this.state.dataEvent.Attendees.map((item)=>{
-                                        this.state.dataEvent.Attendees !=="" ? this.state.dataEvent.Attendees.map((item)=>{
+                                        this.state.dataEvent.Attendees.map((item)=>{
                                             return (
                                                 <a className="mailto"  href={`mailto: ${item.Email}`}>
                                                     {item.DisplayName}
                                                 </a>
                                             );
-                                        }):""
+                                        })
                                 );
                                 })()}
                             </span>
                         </div>
                     </div>
-
-                    {this.showScheduleIt(this.state.isSuggestion)}
-
                 </div>
             </MsgFrame>
         )

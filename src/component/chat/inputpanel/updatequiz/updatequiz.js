@@ -21,7 +21,7 @@ export default class Updatequiz extends Component {
         super(props);
         this.state = {
             using: false,
-            UserId: 12,
+            UserId: 1,
             WorkingHours: {
                 StartTime: "",
                 EndTime: ""
@@ -32,14 +32,13 @@ export default class Updatequiz extends Component {
 
     onToggleApp() {
         this.setState({using: !this.state.using});
-        this.emptyAll();
     }
 
     onWorkingChanged(time){
         this.setState({
             WorkingHours: {
-                StartTime: time[0].format("HH:mm"),
-                EndTime: time[0].format("HH:mm")
+                StartTime: time[0].format("hh:mm"),
+                EndTime: time[0].format("hh:mm")
             }
         });
     }
@@ -49,38 +48,11 @@ export default class Updatequiz extends Component {
     }
 
     onYesClick(){
-        this.onToggleApp();
-        let repo = this.updateQuiz();
-        this.emptyAll();
-        console.log(repo);
+
     }
 
     onNoClick(){
-        this.onToggleApp();
-        this.emptyAll();
-    }
 
-    async updateQuiz(){
-        console.log(this.state);
-        return (await ajax("/update-model", {
-            UserId: 12,
-            WorkingHours: this.state.WorkingHours,
-            BreakTime: this.state.BreakTime,
-            TimePreference: this.state.TimePreference,
-            WeatherPreference: this.state.WeatherPreference
-        }, 'POST'));
-
-    }
-
-    emptyAll(){
-        this.setState({
-            UserId: 12,
-            WorkingHours: {
-                StartTime: "",
-                EndTime: ""
-            },
-            WeatherPreference: ""
-        });
     }
 
     render() {
@@ -108,7 +80,7 @@ export default class Updatequiz extends Component {
                                 Working Hours:
                             </label>
                             <span className="feature-ctl">
-                                <TimePicker.RangePicker format="HH:mm" onChange={e=>this.onWorkingChanged(e)}/>
+                                <TimePicker.RangePicker format="hh:mm" onChange={e=>this.onWorkingChanged(e)}/>
                             </span>
                         </div>
 
@@ -124,7 +96,7 @@ export default class Updatequiz extends Component {
                                 >
                                     <Radio.Button value="sunny">sunny</Radio.Button>
                                     <Radio.Button value="rainy">rainy</Radio.Button>
-                                    <Radio.Button value="none">none</Radio.Button>
+                                    <Radio.Button value="any">any</Radio.Button>
                                 </Radio.Group>
 
                                 {/*<Select mode="multiple"*/}

@@ -6,15 +6,8 @@ import {message} from "antd";
 * ajax
 * */
 
-const HOSTER = {
-    EVENT:  "https://robin-server-api.herokuapp.com",
-    BOT: "https://dialogflow.cloud.google.com/v1/integrations/messenger/webhook/4b2add1d-2437-4dfc-b333-b0184a8203f3/sessions/dfMessenger-86231231"
-}
-
-export default function ajax(url,data={},type='GET', hoster='EVENT'){
-
-    // https://robin-server-api.herokuapp.com/event/read_all
-    const h = HOSTER[hoster];
+export default function ajax(url,data={},type='GET'){
+    const h = "http://99kiss.net:8080";
     url = h+url;
     const axiosInstance =  axios.create({
         timeout: 8000,

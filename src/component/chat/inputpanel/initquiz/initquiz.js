@@ -21,7 +21,7 @@ export default class InitQuiz extends Component {
         super(props);
         this.state = {
             using: false,
-            UserId: 12,
+            UserId: 1,
             WorkingHours: {
                 StartTime: "",
                 EndTime: ""
@@ -37,14 +37,13 @@ export default class InitQuiz extends Component {
 
     onToggleApp() {
         this.setState({using: !this.state.using});
-        this.emptyAll();
     }
 
     onWorkingChanged(time){
         this.setState({
             WorkingHours: {
-                StartTime: time[0].format("HH:mm"),
-                EndTime: time[0].format("HH:mm")
+                StartTime: time[0].format("hh:mm"),
+                EndTime: time[0].format("hh:mm")
             }
         });
     }
@@ -52,8 +51,8 @@ export default class InitQuiz extends Component {
     onBreakingChanged(time){
         this.setState({
             BreakTime: {
-                StartTime: time[0].format("HH:mm"),
-                EndTime: time[0].format("HH:mm")
+                StartTime: time[0].format("hh:mm"),
+                EndTime: time[0].format("hh:mm")
             },
         });
     }
@@ -67,43 +66,11 @@ export default class InitQuiz extends Component {
     }
 
     onYesClick(){
-        this.onToggleApp();
-        let repo = this.initQuiz();
-        this.emptyAll();
-        console.log(repo);
-    }
-
-    async initQuiz(){
-        console.log(this.state);
-        return (await ajax("/store-initial-model", {
-            UserId: 12,
-            WorkingHours: this.state.WorkingHours,
-            BreakTime: this.state.BreakTime,
-            TimePreference: this.state.TimePreference,
-            WeatherPreference: this.state.WeatherPreference
-        }, 'POST'));
 
     }
 
     onNoClick(){
-        this.onToggleApp();
-        this.emptyAll();
-    }
 
-    emptyAll(){
-        this.setState({
-            UserId: 12,
-            WorkingHours: {
-                StartTime: "",
-                EndTime: ""
-            },
-            BreakTime: {
-                StartTime: "",
-                EndTime: ""
-            },
-            TimePreference: "",
-            WeatherPreference: ""
-        });
     }
 
     render() {
@@ -131,7 +98,7 @@ export default class InitQuiz extends Component {
                                 Working Hours:
                             </label>
                             <span className="feature-ctl">
-                                <TimePicker.RangePicker format="HH:mm" onChange={e=>this.onWorkingChanged(e)}/>
+                                <TimePicker.RangePicker format="hh:mm" onChange={e=>this.onWorkingChanged(e)}/>
                             </span>
                         </div>
 
@@ -143,7 +110,7 @@ export default class InitQuiz extends Component {
                                 Break Time:
                             </label>
                             <span className="feature-ctl">
-                                <TimePicker.RangePicker format="HH:mm" onChange={e=>this.onBreakingChanged(e)}/>
+                                <TimePicker.RangePicker format="hh:mm" onChange={e=>this.onBreakingChanged(e)}/>
                             </span>
                         </div>
 
@@ -160,7 +127,7 @@ export default class InitQuiz extends Component {
                                     <Radio.Button value="morning">morning</Radio.Button>
                                     <Radio.Button value="afternoon">afternoon</Radio.Button>
                                     <Radio.Button value="evening">evening</Radio.Button>
-                                    <Radio.Button value="none">none</Radio.Button>
+                                    <Radio.Button value="">any</Radio.Button>
                                 </Radio.Group>
 
                                 {/*<Select mode="multiple"*/}
@@ -188,7 +155,7 @@ export default class InitQuiz extends Component {
                                 >
                                     <Radio.Button value="sunny">sunny</Radio.Button>
                                     <Radio.Button value="rainy">rainy</Radio.Button>
-                                    <Radio.Button value="none">none</Radio.Button>
+                                    <Radio.Button value="any">any</Radio.Button>
                                 </Radio.Group>
 
                                 {/*<Select mode="multiple"*/}
